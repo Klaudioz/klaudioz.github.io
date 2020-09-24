@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Today, Kubecon EU 2020 has started as an online event because of the pandemic so I’m starting a series of posts summarizing the most important topics covered. Hopefully, you found this helpful. I’m st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Container Security Fundamentals - Summary">
+<meta property="og:url" content="https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/index.html">
+<meta property="og:site_name" content="Klaudioz's blog">
+<meta property="og:description" content="Today, Kubecon EU 2020 has started as an online event because of the pandemic so I’m starting a series of posts summarizing the most important topics covered. Hopefully, you found this helpful. I’m st">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.claud.dev/.dev//2020-08-17-11-07-08.png">
+<meta property="article:published_time" content="2020-08-17T15:44:44.000Z">
+<meta property="article:modified_time" content="2020-09-24T18:35:45.976Z">
+<meta property="article:author" content="Claudio Canales">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Kubecon">
+<meta property="article:tag" content="Security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.claud.dev/.dev//2020-08-17-11-07-08.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Container Security Fundamentals - Summary</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/08/31/Is-100-availability-a-myth/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;text=Container Security Fundamentals - Summary"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;is_video=false&amp;description=Container Security Fundamentals - Summary"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Container Security Fundamentals - Summary&amp;body=Check out this article: https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;name=Container Security Fundamentals - Summary&amp;description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;t=Container Security Fundamentals - Summary"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Container Security Fundamentals - Summary
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Klaudioz's blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-08-17T15:44:44.000Z" itemprop="datePublished">2020-08-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Kubecon/" rel="tag">Kubecon</a>, <a class="tag-link-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a>, <a class="tag-link-link" href="/tags/Security/" rel="tag">Security</a>
+    </div>
+
+
+      5 min. read
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Today, Kubecon EU 2020 has started as an online event because of the pandemic so I’m starting a series of posts summarizing the most important topics covered. Hopefully, you found this helpful.</p>
+<p>I’m starting with the presentation called <a target="_blank" rel="noopener" href="https://kccnceu20.sched.com/event/ZetO/help-my-cluster-is-on-the-internet-container-security-fundamentals-samuel-davidson-google"> Help! My Cluster Is On The Internet: Container Security Fundamentals</a> by <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/samuelbdavidson/">Samuel Davidson</a> from Google. All the credits for him.</p>
+<p>There are 4 areas where we can improve our security related to Kubernetes. These areas are Containers, Pods, Cluster and User.</p>
+<ul>
+<li><p>Containers</p>
+<ul>
+<li>#1 - Assume you will be owned:<ul>
+<li>Always new vulnerabilities will be found. That’s inevitable because of the complexity of every software. So it’s better to be prepared all the time to mitigate this risk working with best security practices.</li>
+</ul>
+</li>
+<li>#2 - Use a distroless base image:<ul>
+<li>Distroless images are bare-bones versions of common base images. They have the bare-minimum needed to execute a binary. So if an attacker gains access, it’s not possible to do a lot of damage.</li>
+<li>When you are interested to reduce size, Alpine should be your choice. For security, the choice should be distroless. Both are very reduced size and implementing security by the concept of <strong>Less attack surface</strong> by avoiding unnecessary stuff on the packaged docker images but distroless has no a package manager at all.</li>
+<li>You can check Google’s GitHub repository of distroless docker images in the following <a target="_blank" rel="noopener" href="https://github.com/GoogleContainerTools/distroless">link</a></li>
+</ul>
+</li>
+<li>#3 - Containers should be easy to rebuild and redeploy:<ul>
+<li>It’d be an automated process by a CI/CD pipeline. Having full automation should be the goal. It can work even as a <strong>disaster recovery strategy</strong> because you can rebuild your entire infrastructure from zero quickly.</li>
+</ul>
+</li>
+<li>#4 - Trust your containers with signatures:<ul>
+<li>Your CI/CD platform should sign the containers it builds for production and the image repository is trusted through TLS.</li>
+<li>Think about the possibility that one attacker pushed an infected version of your code in the container registry.</li>
+<li>So, a container with a not valid signature is not accepted in the cluster. It’s not implemented natively by Kubernetes, but it can be done with a <strong>policy engine</strong> like <a target="_blank" rel="noopener" href="https://github.com/open-policy-agent/gatekeeper">Gatekeeper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pods</p>
+<ul>
+<li>#1 - Don’t use hostPath:<ul>
+<li>Avoid using the Node’s filesystem. It can be edited for other pods, apps, etc.</li>
+<li>There are better alternatives like <em>PersistentVolumeClaim</em>.</li>
+</ul>
+</li>
+<li>#2 - Don’t use <em>hostNetwork</em>:<ul>
+<li>Binds the pod to the Node’s network. Allows localhost communication with K8s infrastructure components running on the node.</li>
+</ul>
+</li>
+<li>#3 - Be conscious of your pod’s Service Account:<ul>
+<li><strong>All pods</strong> have a service account by default even if you don’t set one in the <em>podSpec</em>.</li>
+<li>Then, the credentials for your pods service account are automatically mounted within its filesystem and available to the container which can be owned by an attacker !!</li>
+</ul>
+</li>
+<li>#4 Avoid privileged containers in your pods:<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">klaudioz/hello-world</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hello-world</span></span><br><span class="line">    <span class="attr">securityContext:</span></span><br><span class="line">      <span class="attr">privileged:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>This pod is owned by <em>root</em>, so if an attacker owns the pod, it can be very dangerous.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Cluster</p>
+<ul>
+<li>#1 - Keep your cluster up to date:<ul>
+<li>Bugs and vulnerabilities are fixed all the time, also Kubernetes provides a secure incremental way to update the nodes of the cluster one by one.</li>
+</ul>
+</li>
+<li>#2 - Isolate your cluster from the Internet:<ul>
+<li>Your nodes should not be on the internet with a publicly addressable IP. Use a <em>LoadBalancer</em> for that.</li>
+</ul>
+</li>
+<li>#3 - For your secrets use secrets:<ul>
+<li>Great for access keys, passwords, tokens, etc. Stored in memory, never saved to a node.</li>
+<li>The security of Secrets comes from <em>RBAC</em> and using many namespaces as security boundaries.</li>
+</ul>
+</li>
+<li>#4 Don’t use basic auth:<ul>
+<li>It is a quick convenient way to set up usernames and passwords with your API Server using the flag:    <code>--basic-auth-file=...</code></li>
+<li><strong>NEVER</strong> use it in a production cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>User</p>
+<ul>
+<li>#1 - All your devs and robots (CICD, automation) should have a unique identity:<ul>
+<li>Every person or service account should have a unique identity to interact with the cluster.</li>
+</ul>
+</li>
+<li>#2 - Use <em>RBAC</em> and groups:<ul>
+<li>Implement the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">Principle of Least Privilege</a> in your cluster with RBAC’s fine-grained controls in an easy way.</li>
+</ul>
+</li>
+<li>#3 - Using <em>RBAC</em>, bind policies against groups not individuals:<ul>
+<li>Use <em>Roles</em> and <em>Bindings</em> within the cluster:</li>
+<li><img src="/.dev//2020-08-17-11-07-08.png"></li>
+</ul>
+</li>
+<li>#4 - Use a policy agent to protect your cluster:<ul>
+<li>Typically a Kubernetes <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">AdmissionController</a> which selectively allows/denies Kubernetes resource requests based on rules (or policies)</li>
+<li>It can be used <a target="_blank" rel="noopener" href="https://github.com/open-policy-agent/gatekeeper">Gatekeeper</a> for this job. It’s very easy to configure and make it works.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The author provided a summary document from the talk <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1OefvSpURuOHdNNiwbRXmhPiRUFsYnllgMPDaVqXRkh4/edit#heading=h.lroslfbjn64r">here</a> if you have any question related to the talk.</p>
+
+  </div>
+</article>
+
+
+
+<script src="https://utteranc.es/client.js" repo="Klaudioz/klaudioz.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async="">
+</script>
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;text=Container Security Fundamentals - Summary"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;is_video=false&amp;description=Container Security Fundamentals - Summary"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Container Security Fundamentals - Summary&amp;body=Check out this article: https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;title=Container Security Fundamentals - Summary"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;name=Container Security Fundamentals - Summary&amp;description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.claud.dev/2020/08/17/Container-Security-Fundamentals-Summary/&amp;t=Container Security Fundamentals - Summary"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright ©
+    
+    
+    2020
+    Claudio Canales
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+
+
+
+
+
+<!-- clipboard -->
+
+  
+
+
+  
+
+
+
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+
+
+<script src="/bundle.js"></script><script>
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  ;
+
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-175550079-1', 'auto');
+        ga('send', 'pageview');
+    </script></body></html>
