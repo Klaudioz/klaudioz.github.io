@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Everybody is trying to find or create the one true note-taking tool or knowledge management system. Unfortunately, the complexity of any of these tools makes this task impossible to accomplish. On th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My personal knowledge management system">
+<meta property="og:url" content="https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/index.html">
+<meta property="og:site_name" content="Klaudioz's blog">
+<meta property="og:description" content="Everybody is trying to find or create the one true note-taking tool or knowledge management system. Unfortunately, the complexity of any of these tools makes this task impossible to accomplish. On th">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-12T17:53:16.000Z">
+<meta property="article:modified_time" content="2020-11-30T15:02:50.832Z">
+<meta property="article:author" content="Claudio Canales">
+<meta property="article:tag" content="Knowledge management">
+<meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>My personal knowledge management system</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/09/21/Top-50-new-kubernetes-tools/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;text=My personal knowledge management system"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;is_video=false&amp;description=My personal knowledge management system"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=My personal knowledge management system&amp;body=Check out this article: https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;name=My personal knowledge management system&amp;description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;t=My personal knowledge management system"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        My personal knowledge management system
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Klaudioz's blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-11-12T17:53:16.000Z" itemprop="datePublished">2020-11-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Knowledge-management/" rel="tag">Knowledge management</a>, <a class="tag-link-link" href="/tags/Tools/" rel="tag">Tools</a>
+    </div>
+
+
+      8 min. read
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p> Everybody is trying to find or create the one true note-taking tool or knowledge management system. Unfortunately, the complexity of any of these tools makes this task impossible to accomplish.<br> On the contrary, there are hundreds of available tools, and make the correct integration between them is the real challenge. But being honest, people don’t have time for that and everybody wants a simple solution which the knowledge management market probably isn’t mature yet for that.<br> I’ve used a lot of these tools and I can speak about my experience but for me, the final workflow is still WIP and probably it’ll be in that way forever.<br>So, I’m going to describe some tool categories, which any of these have maybe dozens of tools available so I’m going to describe only the tools I have experience working with them or I have some familiarity with.<br>My main idea for this is to use a Zettelkasten and try to centralize everything.<br> I use multiple tools and techniques to make this workflow ideally frictionless and making the correct relationships between the things I’m interested to learn because that’s the only way to don’t forget them. This is the reason I started to research Zettelkasten and finally adopted it, but it can be a new entire topic to discuss in another blog entry.</p>
+<ul>
+<li><p>Note-taking &amp; note-management</p>
+<ul>
+<li>This is a huge world where the most popular tools are: <a target="_blank" rel="noopener" href="https://evernote.com/">Evernote</a>, <a target="_blank" rel="noopener" href="https://www.onenote.com/">Microsoft OneNote</a>, <a target="_blank" rel="noopener" href="https://keep.google.com/">Google Keep</a>, <a target="_blank" rel="noopener" href="https://www.icloud.com/notes">Apple Notes</a>, <a target="_blank" rel="noopener" href="https://roamresearch.com/">Roam Research</a>, etc. Even a simple notepad can be used for that. What I’m looking for here is to use <a target="_blank" rel="noopener" href="https://zettelkasten.de/">Zettelkasten</a> to centralize my knowledge and get compound interest of my thoughts, so to accomplish that I need to make associations between notes. This system model in a better way how the human brain works. The opposite of that and maybe a very common situation a few years ago is to use a tool like Evernote and store and store more data using a hierarchy or tree, something which is excellent for machines but not natural for the human brain so at the end our notes finish its life in a cemetery of thoughts.</li>
+<li>Another important thing for me is to be able to access my Zettelkasten offline and online on all my devices. Right now in my MacBook Pro, I’m using Obsidian. It’s a great project with constant new features and a great community. Also, all the notes are simple markdown files so I can change it to another tool in the future easily if it’s needed.</li>
+<li>All my notes are hosted over Dropbox, where I have a lot of space and I can use it for free only using three devices, so I’m using it over my MacBook, Ipad, and iPhone. So most of the time I take notes over the MacBook Pro with Obsidian and if I’m using the iPhone or Ipad I use 1Writer because Obsidian doesn’t have a mobile version yet so everything is coordinated between devices.</li>
+</ul>
+</li>
+<li><p>Quick capture</p>
+<ul>
+<li>This is extremely important because a thought, a link between ideas, etc is something which can be lost forever easily if it’s not captured fast so I’m using <a target="_blank" rel="noopener" href="https://raindrop.io/">Raindrop</a> on all my devices to capture any URL, tweet, Reddit, email or Youtube video easily managing a collection of bookmarks which should be consumed. It works on all devices and the non-Pro version is free. Right now I’m planning to move to the premium version, but until now I don’t need it at all.</li>
+<li>I used a few categories for that, the most important are: Articles, Twitter, Reddit (There is an issue where I can’t see the website directly from the app), Newsletters, and Youtube. I used several <a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a> workflows to send to Raindrop anything I like to analyze with more detail so after like a tweet or Youtube video or save a post in Reddit, the IFTTT workflow will create new entries for me in Raindrop. The easiest case of capture is when I’m using a browser, I can send the link to Raindrop sharing with my iPhone/Ipad or using the <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien?hl=en">Raindrop Chrome extension</a>.</li>
+<li>When finally I process any of these bookmarks, after taking my notes in the Zettelkasten, I move the bookmark to the Done category so I don’t need to use any tag or highlight with this workflow and this is the main reason I stopped to use <a target="_blank" rel="noopener" href="https://www.instapaper.com/">Instapaper</a>. My end goal using this app is to keep Raindrop with zero bookmarks over all the categories, except Done. That’s very important to me to keep this workflow running smoothly and I try to process all the new bookmarks every morning when I’m more energized after a good night of sleep.</li>
+<li>All this process can be done with tools different than Obsidian, like using plugins for <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a> like <a target="_blank" rel="noopener" href="http://foambubble.github.io/">Foam</a> or <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dendron.dendron">Dendron</a></li>
+</ul>
+</li>
+<li><p>Books</p>
+<ul>
+<li>This workflow is a simple one. I read mainly on my Ipad using Apple Books, but I can do it on my iPhone and my MacBook preserving highlights. I try to read only one book simultaneously while trying to finish it soon while I’m taking highlights and some notes. When I finish the book, I use <a target="_blank" rel="noopener" href="https://github.com/fabianmu/ibooks2markdown">ibooks2markdown</a> to get the highlights and copy and paste the generated markdown over a new note in Obsidian. I read every highlight and try to make connections over Obsidian using bi-directional linking. The reason to read the book faster is I’m going to start forgetting the notes and highlights if the time is running out. Also probably there much good information from the book, so the process the analyze and connect any highlight can take some time.</li>
+</ul>
+</li>
+<li><p>Version Control</p>
+<ul>
+<li>My Zettelkasten is stored in <a target="_blank" rel="noopener" href="https://www.dropbox.com/">Dropbox</a> so it’s very secure there. But it’s very important to me, so I used an Obsidian plugin called <a target="_blank" rel="noopener" href="https://github.com/denolehov/obsidian-git">obsidian-git</a> to have an updated copy in <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> as well. It can be used any cloud storage for that, like <a target="_blank" rel="noopener" href="https://drive.google.com/drive/u/0/">Google Drive</a>, <a target="_blank" rel="noopener" href="https://www.icloud.com/">Icloud</a>, etc and any version control like <a target="_blank" rel="noopener" href="https://gitlab.com/gitlab-com">GitLab</a>, <a target="_blank" rel="noopener" href="https://bitbucket.org/">BitBucket</a>, etc.</li>
+</ul>
+</li>
+<li><p>Visual thinking</p>
+<ul>
+<li>My workflow right now isn’t using any visual thinking tool, but in a different context I’ve used applications like Muse or Miro which are great but a little bit expensive. If I have to use some visual resources to organize my thoughts, I prefer to use <a target="_blank" rel="noopener" href="https://www.gingerlabs.com/">Notability</a> using the Apple Pencil over the Ipad and draw some diagrams.</li>
+</ul>
+</li>
+<li><p>Project Management</p>
+<ul>
+<li>[[Notion]]</li>
+<li>[[Jira]] professionally</li>
+</ul>
+</li>
+<li><p>Read it later</p>
+<ul>
+<li>[[Raindrop.io]]</li>
+</ul>
+</li>
+<li><p>Word Processing</p>
+<ul>
+<li>[[Google Docs]] with [[Grammarly]]</li>
+</ul>
+</li>
+<li><p>Dissemination and learning</p>
+<ul>
+<li>dd</li>
+<li>[[Slack]]</li>
+<li>[[Twitter]]</li>
+<li>[[LinkedIn]]</li>
+<li>[[Youtube]]</li>
+<li>[[Reddit]]</li>
+</ul>
+</li>
+<li><p>Audio Notes</p>
+<ul>
+<li>Go to the transcript. Convert the html to epub and send it to Apple Books</li>
+</ul>
+</li>
+<li><p>Recall</p>
+<ul>
+<li>[[Anki]]</li>
+<li>[[NeuraCache]]</li>
+</ul>
+</li>
+<li><p>Curation</p>
+</li>
+<li><p>Ref management</p>
+</li>
+<li><p>Self-analytics</p>
+</li>
+<li><p>Collective knowledge</p>
+</li>
+<li><p>Augment content</p>
+</li>
+</ul>
+<p>More tools: Spark, Alfred/Keyboard maestro</p>
+
+  </div>
+</article>
+
+
+
+<script src="https://utteranc.es/client.js" repo="Klaudioz/klaudioz.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async="">
+</script>
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;text=My personal knowledge management system"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;is_video=false&amp;description=My personal knowledge management system"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=My personal knowledge management system&amp;body=Check out this article: https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;title=My personal knowledge management system"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;name=My personal knowledge management system&amp;description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.claud.dev/2020/11/12/My-personal-knowledge-management-system/&amp;t=My personal knowledge management system"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright ©
+    
+    
+    2020-2021
+    Claudio Canales
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+
+
+
+
+
+<!-- clipboard -->
+
+  
+
+
+  
+
+
+
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+
+
+<script src="/bundle.js"></script><script>
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  ;
+
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-175550079-1', 'auto');
+        ga('send', 'pageview');
+    </script></body></html>
