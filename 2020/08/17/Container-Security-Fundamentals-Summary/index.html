@@ -365,6 +365,111 @@
 <!-- Disqus Comments -->
 
 
+    <div class="resume">
+  <div class="resume-left">
+    <a target="_blank" rel="noopener" href="https://klaudioz.github.io/CC-Resume.docx">My Resume</a>
+  </div>
+  <div class="resume-entry">
+      <p>Today, Kubecon EU 2020 has started as an online event because of the pandemic so I’m starting a series of posts summarizing the most important topics covered. Hopefully, you found this helpful.</p>
+<p>I’m starting with the presentation called <a target="_blank" rel="noopener" href="https://kccnceu20.sched.com/event/ZetO/help-my-cluster-is-on-the-internet-container-security-fundamentals-samuel-davidson-google"> Help! My Cluster Is On The Internet: Container Security Fundamentals</a> by <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/samuelbdavidson/">Samuel Davidson</a> from Google. All the credits for him.</p>
+<p>There are 4 areas where we can improve our security related to Kubernetes. These areas are Containers, Pods, Cluster and User.</p>
+<ul>
+<li><p>Containers</p>
+<ul>
+<li>#1 - Assume you will be owned:<ul>
+<li>Always new vulnerabilities will be found. That’s inevitable because of the complexity of every software. So it’s better to be prepared all the time to mitigate this risk working with best security practices.</li>
+</ul>
+</li>
+<li>#2 - Use a distroless base image:<ul>
+<li>Distroless images are bare-bones versions of common base images. They have the bare-minimum needed to execute a binary. So if an attacker gains access, it’s not possible to do a lot of damage.</li>
+<li>When you are interested to reduce size, Alpine should be your choice. For security, the choice should be distroless. Both are very reduced size and implementing security by the concept of <strong>Less attack surface</strong> by avoiding unnecessary stuff on the packaged docker images but distroless has no a package manager at all.</li>
+<li>You can check Google’s GitHub repository of distroless docker images in the following <a target="_blank" rel="noopener" href="https://github.com/GoogleContainerTools/distroless">link</a></li>
+</ul>
+</li>
+<li>#3 - Containers should be easy to rebuild and redeploy:<ul>
+<li>It’d be an automated process by a CI/CD pipeline. Having full automation should be the goal. It can work even as a <strong>disaster recovery strategy</strong> because you can rebuild your entire infrastructure from zero quickly.</li>
+</ul>
+</li>
+<li>#4 - Trust your containers with signatures:<ul>
+<li>Your CI/CD platform should sign the containers it builds for production and the image repository is trusted through TLS.</li>
+<li>Think about the possibility that one attacker pushed an infected version of your code in the container registry.</li>
+<li>So, a container with a not valid signature is not accepted in the cluster. It’s not implemented natively by Kubernetes, but it can be done with a <strong>policy engine</strong> like <a target="_blank" rel="noopener" href="https://github.com/open-policy-agent/gatekeeper">Gatekeeper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pods</p>
+<ul>
+<li>#1 - Don’t use hostPath:<ul>
+<li>Avoid using the Node’s filesystem. It can be edited for other pods, apps, etc.</li>
+<li>There are better alternatives like <em>PersistentVolumeClaim</em>.</li>
+</ul>
+</li>
+<li>#2 - Don’t use <em>hostNetwork</em>:<ul>
+<li>Binds the pod to the Node’s network. Allows localhost communication with K8s infrastructure components running on the node.</li>
+</ul>
+</li>
+<li>#3 - Be conscious of your pod’s Service Account:<ul>
+<li><strong>All pods</strong> have a service account by default even if you don’t set one in the <em>podSpec</em>.</li>
+<li>Then, the credentials for your pods service account are automatically mounted within its filesystem and available to the container which can be owned by an attacker !!</li>
+</ul>
+</li>
+<li>#4 Avoid privileged containers in your pods:<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">klaudioz/hello-world</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hello-world</span></span><br><span class="line">    <span class="attr">securityContext:</span></span><br><span class="line">      <span class="attr">privileged:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>This pod is owned by <em>root</em>, so if an attacker owns the pod, it can be very dangerous.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Cluster</p>
+<ul>
+<li>#1 - Keep your cluster up to date:<ul>
+<li>Bugs and vulnerabilities are fixed all the time, also Kubernetes provides a secure incremental way to update the nodes of the cluster one by one.</li>
+</ul>
+</li>
+<li>#2 - Isolate your cluster from the Internet:<ul>
+<li>Your nodes should not be on the internet with a publicly addressable IP. Use a <em>LoadBalancer</em> for that.</li>
+</ul>
+</li>
+<li>#3 - For your secrets use secrets:<ul>
+<li>Great for access keys, passwords, tokens, etc. Stored in memory, never saved to a node.</li>
+<li>The security of Secrets comes from <em>RBAC</em> and using many namespaces as security boundaries.</li>
+</ul>
+</li>
+<li>#4 Don’t use basic auth:<ul>
+<li>It is a quick convenient way to set up usernames and passwords with your API Server using the flag:    <code>--basic-auth-file=...</code></li>
+<li><strong>NEVER</strong> use it in a production cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>User</p>
+<ul>
+<li>#1 - All your devs and robots (CICD, automation) should have a unique identity:<ul>
+<li>Every person or service account should have a unique identity to interact with the cluster.</li>
+</ul>
+</li>
+<li>#2 - Use <em>RBAC</em> and groups:<ul>
+<li>Implement the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">Principle of Least Privilege</a> in your cluster with RBAC’s fine-grained controls in an easy way.</li>
+</ul>
+</li>
+<li>#3 - Using <em>RBAC</em>, bind policies against groups not individuals:<ul>
+<li>Use <em>Roles</em> and <em>Bindings</em> within the cluster:</li>
+<li><img src="2020-08-17-11-07-08.png"></li>
+</ul>
+</li>
+<li>#4 - Use a policy agent to protect your cluster:<ul>
+<li>Typically a Kubernetes <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">AdmissionController</a> which selectively allows/denies Kubernetes resource requests based on rules (or policies)</li>
+<li>It can be used <a target="_blank" rel="noopener" href="https://github.com/open-policy-agent/gatekeeper">Gatekeeper</a> for this job. It’s very easy to configure and make it works.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The author provided a summary document from the talk <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1OefvSpURuOHdNNiwbRXmhPiRUFsYnllgMPDaVqXRkh4/edit#heading=h.lroslfbjn64r">here</a> if you have any question related to the talk.</p>
+
+  </div>
+</div>
 
 
 <script src="/bundle.js"></script><script>

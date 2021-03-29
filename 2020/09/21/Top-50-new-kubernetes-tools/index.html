@@ -369,6 +369,118 @@
 <!-- Disqus Comments -->
 
 
+    <div class="resume">
+  <div class="resume-left">
+    <a target="_blank" rel="noopener" href="https://klaudioz.github.io/CC-Resume.docx">My Resume</a>
+  </div>
+  <div class="resume-entry">
+      <p>In this post I filtered out a big collection about new useful tools to work with Kubernetes. I used the following criteria to select them:</p>
+<ul>
+<li>Open source projects hosted in Github.</li>
+<li>More than 50 stars but less than 10000 to exclude very popular tools like: <a target="_blank" rel="noopener" href="https://github.com/helm/helm">helm</a>, <a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/kustomize">kustomize</a>, <a target="_blank" rel="noopener" href="https://github.com/grafana/loki">loki</a>, <a target="_blank" rel="noopener" href="https://github.com/lensapp/lens">lens</a>, <a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/kind">kind</a>, etc.</li>
+<li>Last commit not old than 3 months.</li>
+</ul>
+<p>The motivation to create this list was feeling overwhelmed with the amount of new Kubernetes tools you can see every day so making a sorted list managing this knowledge can be done easily.<br>So, this is the final list without any particular sorting except the name of the categories:</p>
+<h2 id="Alerting"><a href="#Alerting" class="headerlink" title="Alerting"></a>Alerting</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/flant/k8s-image-availability-exporter">k8s-image-availability-exporter</a>: Alert if an image used in Kubernetes cannot be pulled from container registry.</li>
+</ul>
+<h2 id="Backup"><a href="#Backup" class="headerlink" title="Backup"></a>Backup</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/miracle2k/k8s-snapshots">k8s-snapshots</a>: Automatic Volume Snapshots on Kubernetes.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stashed/stash">stash</a>: Backup Kubernetes Stateful Applications.</li>
+</ul>
+<h2 id="Best-practices"><a href="#Best-practices" class="headerlink" title="Best practices"></a>Best practices</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FairwindsOps/polaris">polaris</a>: Validation of best practices in your Kubernetes clusters.</li>
+</ul>
+<h2 id="Chaos-engineering"><a href="#Chaos-engineering" class="headerlink" title="Chaos engineering"></a>Chaos engineering</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/litmuschaos/litmus">litmus</a>: It helps Kubernetes SREs and developers practice chaos engineering in a Kubernetes native way.</li>
+</ul>
+<h2 id="CLI-tools"><a href="#CLI-tools" class="headerlink" title="CLI tools"></a>CLI tools</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ahmetb/kubectx">kubectx</a>: Faster way to switch between clusters and namespaces in kubectl</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jonmosco/kube-ps1">kube-ps1</a>: Kubernetes prompt info for bash and zsh</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/andreazorzetto/yh">yh</a>: YAML syntax highlighter to bring colours where only jq could.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/helm/chart-testing">chart-testing</a>: CLI tool for linting and testing Helm charts.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/FairwindsOps/pluto">pluto</a>: A cli tool to help discover deprecated apiVersions in Kubernetes.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cyberark/kubeletctl">kubeletctl</a>: It’s a CLI tool that implement kubelet’s API.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/narendranathreddythota/podtnl">podtnl</a>: CLI tool that makes your pod available online without exposing a Kubernetes service.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sbstp/kubie">kubie</a>: A more powerful alternative to kubectx and kubens.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/d-kuro/kubectl-fuzzy">kubectl-fuzzy</a>: This tool uses fzf(1)-like fuzzy-finder to do partial or fuzzy search of Kubernetes Resources.</li>
+</ul>
+<h2 id="Cluster-management"><a href="#Cluster-management" class="headerlink" title="Cluster management"></a>Cluster management</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/futurewei-cloud/arktos">arktos</a>: It’s an open source cluster management system designed for large scale clouds addressing key challenges of large scale clouds, including system scalability, resource efficiency, multitenancy, etc.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubecost/cluster-turndown">cluster-turndown</a>: Automated turndown of Kubernetes clusters on specific schedules.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubermatic/kubermatic">kubermatic</a>: Kubermatic Kubernetes Platform - the Central Kubernetes Management Platform for any infrastructure.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubermatic/kubecarrier">KubeCarrier</a>: It’s a system for managing applications and services across multiple Kubernetes Clusters; providing a framework to centralize the management of services and provide these services with external users in a self service catalog.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/weaveworks/wksctl">wksctl</a>: Allows simple creation of a Kubernetes cluster given a set of IP addresses and an SSH key. It can be run in a standalone environment but is best used via a GitOps approach in which cluster and machine descriptions are stored in Git.</li>
+</ul>
+<h2 id="Container-registry"><a href="#Container-registry" class="headerlink" title="Container registry"></a>Container registry</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/plexsystems/sinker">sinker</a>: A tool to sync images from one container registry to another.</li>
+</ul>
+<h2 id="Costs"><a href="#Costs" class="headerlink" title="Costs"></a>Costs</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubecost/cost-model">cost-model</a>: Cross-cloud cost allocation models for workloads running on Kubernetes.</li>
+</ul>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/practo/k8s-worker-pod-autoscaler">k8s-worker-pod-autoscaler</a>: It scales the replicas in a deployment based on observed queue length.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dpeckett/pangolin">pangolin</a>: It’s an enhanced Horizontal Pod Autoscaler for Kubernetes. Pangolin scales deployments based on their Prometheus metrics, using a variety of highly configurable control strategies.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Clivern/Beetle">beetle</a>: Kubernetes multi-cluster deployment automation service.</li>
+</ul>
+<h2 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/norwoodj/helm-docs">helm-docs</a>: A tool for automatically generating markdown documentation for helm charts.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubepack/chart-doc-gen">chart-doc-gen</a>: Helm Chart documentation generator.</li>
+</ul>
+<h2 id="GitOps"><a href="#GitOps" class="headerlink" title="GitOps"></a>GitOps</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fluxcd/flux">flux</a>: The GitOps Kubernetes operator.</li>
+</ul>
+<h2 id="Kubernetes-as-a-service"><a href="#Kubernetes-as-a-service" class="headerlink" title="Kubernetes as a service"></a>Kubernetes as a service</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/oneinfra/oneinfra">oneinfra</a>: Tool designed to orchestrate fleet of Kubernetes clusters. You can control cloud as well as on-prem clusters.</li>
+</ul>
+<h2 id="Kubernetes-API"><a href="#Kubernetes-API" class="headerlink" title="Kubernetes API"></a>Kubernetes API</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/swade1987/deprek8ion">Deprek8ion</a>: Rego policies to monitor Kubernetes APIs deprecations.</li>
+</ul>
+<h2 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/vmware/kube-fluentd-operator">kube-fluentd-operator</a>: Auto-configuration of Fluentd daemon-set based on Kubernetes metadata.</li>
+</ul>
+<h2 id="Monitoring"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/infracloudio/botkube">botkube</a>: It helps you monitor your Kubernetes cluster, debug critical deployments &amp; gives recommendations for standard practices.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prometheus-operator/kube-prometheus">kube-prometheus</a>: Use Prometheus to monitor Kubernetes and applications running on Kubernetes</li>
+</ul>
+<h2 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/omrikiei/ktunnel">ktunnel</a>: A cli that exposes your local resources to kubernetes. It’s convenient replacement for ngrok.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/soluble-ai/kubetap">kubetap</a>: Kubectl plugin to interactively proxy Kubernetes Services with ease.</li>
+</ul>
+<h2 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/clastix/capsule">capsule</a>: It’s a Kubernetes multi-tenant Operator. It can workaround the flat structure of namespaces in Kubernetes by introducing an abstraction called Tenant. Within each tenant, users are free to create their namespaces and share all the assigned resources.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/operator-framework/operator-lifecycle-manager">operator-lifecycle-manager</a>: A management framework for extending Kubernetes with Operators.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/alexellis/registry-creds">registry-creds</a>: Automate Kubernetes registry credentials, to extend Docker Hub limits.</li>
+</ul>
+<h2 id="Secrets"><a href="#Secrets" class="headerlink" title="Secrets"></a>Secrets</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/secrets-store-csi-driver">Secrets Store CSI</a>: Secrets Store CSI driver for Kubernetes secrets - Integrates secrets stores with Kubernetes via a CSI volume.</li>
+</ul>
+<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/appvia/krane">krane</a>: It’s a Kubernetes RBAC static analysis tool. It identifies potential security risks in K8s RBAC design and makes suggestions on how to mitigate them. Krane dashboard presents current RBAC security posture and lets you navigate through its definition.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cyberark/KubiScan">kubiscan</a>: A tool to scan Kubernetes cluster for risky permissions (RBAC).</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/deepfence/ThreatMapper">ThreatMapper</a>: It identifies vulnerabilities in running containers, images, hosts and repositories.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/banzaicloud/dast-operator">dast-operator</a>: Dynamic Application and API Security Testing.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/darkbitio/mkit">mkit</a>: MKIT is a Managed Kubernetes Inspection Tool that validates several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cruise-automation/k-rail">k-rail</a>: Kubernetes security tool for policy enforcement.</li>
+</ul>
+<h2 id="Sign-on"><a href="#Sign-on" class="headerlink" title="Sign-on"></a>Sign-on</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/authelia/authelia">authelia</a>: The Single Sign-On Multi-Factor portal for web apps.</li>
+</ul>
+<h2 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/configurator/kubefs">kubefs</a>: Mount kubernetes metadata storage as a filesystem.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/opstree/dynamic-pv-scaler">dynamic-pv-scaler</a>: It’s a golang based Kubernetes application which has been created to overcome the scaling issue of Persistent Volume in Kubernetes. This can scale the Persistent Volume on the basis of threshold which you have set.</li>
+</ul>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Stono/kconmon">kconmon</a>: It’s a Kubernetes node connectivity tool that performs frequent tests (tcp, udp and dns), and exposes Prometheus metrics.</li>
+</ul>
+<h2 id="Visualization"><a href="#Visualization" class="headerlink" title="Visualization"></a>Visualization</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/weibeld/k1s">k1s</a>: It’s the world’s simplest Kubernetes dashboard with only 30 lines of bash code.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/oslabs-beta/Allok8">allok8</a>: It’s a dynamic, conventional, and uncomplicated web-based UI Kubernetes visualization tool.</li>
+</ul>
+<p>I hope you can find something new and interesting in this list to help you to manage in a more efficient way anything related with Kubernetes. If you have any comments or suggestions please leave a comment.</p>
+
+  </div>
+</div>
 
 
 <script src="/bundle.js"></script><script>
